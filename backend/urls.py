@@ -17,6 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from backend.tinysearchengine import search
+from backend.search_setup import ranker
+from backend.views import index
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('', index, name="index"),
+
+    path("api/v1/search/", search.create_router(ranker, "1.0.0").urls),
 ]

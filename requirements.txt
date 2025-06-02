@@ -1,0 +1,7 @@
+django
+mmh3
+ninja
+numpy
+pandas
+redis
+zstandard
